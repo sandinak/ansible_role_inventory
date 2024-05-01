@@ -1,0 +1,14 @@
+#! /bin/bash
+
+export ANSIBLE_HOME=${PWD}
+export ANSIBLE_INVENTORY=${PWD}/inventory
+
+alias ap=ansible-playbook
+alias ai=ansible-inventory
+
+
+if ! [ -d venv ]; then
+	make
+fi
+
+. ./venv/bin/activate

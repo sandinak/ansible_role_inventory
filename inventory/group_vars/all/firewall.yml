@@ -1,0 +1,10 @@
+---
+firewall_l_base:
+  - name: ssh access
+    port: 22
+    protocol: tcp
+    state: present
+
+  - name: icmp
+    protocol: icmp
+    state: present

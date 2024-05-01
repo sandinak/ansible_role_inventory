@@ -1,0 +1,32 @@
+---
+- name: test
+  hosts: localhost
+  gather_facts: no
+  vars:
+    pl_a:
+      - 1
+      - 2
+    pl_b: 
+      - 3
+      - 4
+
+    pd_a:
+      foo: bar
+      baz: blah
+
+    pd_b:
+      meh: yeh
+      zip: zap
+
+  tasks:
+    - name: assemble a list of all pl_ variables
+      vars: 
+        pl: "{{ [ q('vars', *(q('varnames', '^pl_') )) ] | sum(start=[]) | flatten | default({}) }}"
+      debug: var=pl
+
+    - name: assemble a dict of all pd_ variables
+      vars: 
+        pd:  "{{ q('vars', *(q('varnames', '^pd_') | sort)) | combine(recursive=True) | default({}) }}"
+      debug: var=pd
+
+

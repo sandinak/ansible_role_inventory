@@ -1,0 +1,6 @@
+---
+packages_l_oracle: 
+  - oracle_oracle_package-1
+  - oracle_oracle_package-2
+
+...

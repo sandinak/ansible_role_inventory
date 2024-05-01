@@ -1,0 +1,8 @@
+---
+- name: configure firewall rules
+  vars:
+    _firewall_rules: "{{ [ q('vars', *(q('varnames', '^firewall_l_'))) ]  | sum(start=[]) | flatten | default([]) }}"
+  debug: var=_firewall_rules
+
+...
+

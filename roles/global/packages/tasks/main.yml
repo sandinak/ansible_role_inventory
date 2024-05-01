@@ -1,0 +1,8 @@
+---
+- name: install packages
+  vars:
+    _packages: "{{ [ q('vars', *(q('varnames', '^packages_l_'))) ]  | sum(start=[]) | flatten | default([]) }}"
+  debug: var=_packages
+
+...
+

@@ -1,0 +1,18 @@
+all:
+  children:
+    test:
+    oracle:
+
+test:
+  vars:
+    packages_l_default:
+      - inventory_package
+  hosts:
+    localhost:
+
+oracle:
+  vars:
+    packages_l_default:
+      - inventory_package
+  hosts:
+    foohost:

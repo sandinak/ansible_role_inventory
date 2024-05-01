@@ -1,0 +1,16 @@
+---
+- name: test
+  hosts: test
+  gather_facts: no
+  roles:
+    - global/packages
+    - global/firewall
+
+- name: oracle test 
+  hosts: oracle
+  gather_facts: no
+  roles:
+    - global/packages
+    - global/firewall
+...
+

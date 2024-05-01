@@ -1,0 +1,8 @@
+---
+firewall_l_oracle:
+  - name: oracle access
+    port: 1569
+    protocol: tcp
+    state: present
+
+...

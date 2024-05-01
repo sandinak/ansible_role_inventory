@@ -1,0 +1,7 @@
+---
+packages_l_base:
+  - inventory_base-1
+  - inventory_base-2
+  - inventory_base-3
+
+...
